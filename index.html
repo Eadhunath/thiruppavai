@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiruppavai - Daily Verses</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>திருப்பாவை</h1>
+            <h2>Thiruppavai</h2>
+            <p class="subtitle">Sacred verses by Andal</p>
+        </header>
+
+        <div class="date-info">
+            <p id="dateInfo">Loading...</p>
+        </div>
+
+        <div class="language-selector">
+            <label for="languageSelect">Language:</label>
+            <select id="languageSelect" aria-label="Select display language">
+                <option value="english">English Transliteration</option>
+                <option value="tamil">தமிழ் (Tamil)</option>
+                <option value="sanskrit">संस्कृत (Sanskrit)</option>
+            </select>
+            <div class="source-credits">
+                Source: <a href="https://prapatti.com" target="_blank" rel="noopener">prapatti.com</a>
+                (<a href="https://prapatti.com/slokas/tamil/naalaayiram/aandaal/tiruppaavai.pdf" target="_blank" rel="noopener">Tamil</a>,
+                <a href="https://prapatti.com/slokas/sanskrit/naalaayiram/aandaal/tiruppaavai.pdf" target="_blank" rel="noopener">Sanskrit</a>,
+                <a href="https://prapatti.com/slokas/english/naalaayiram/aandaal/tiruppaavai.pdf" target="_blank" rel="noopener">English</a>)
+            </div>
+        </div>
+
+        <div class="verse-selector">
+            <button id="prevBtn" class="nav-btn" aria-label="Previous verse">&larr; Previous</button>
+            <div class="verse-today-group">
+                <div class="verse-number-display">
+                    <label for="verseSelect">Verse:</label>
+                    <select id="verseSelect" aria-label="Select verse">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <button id="todayBtn" class="nav-btn today-btn" aria-label="Go to today's verse">Today</button>
+            </div>
+            <button id="nextBtn" class="nav-btn" aria-label="Next verse">Next &rarr;</button>
+        </div>
+
+        <div class="verse-content">
+            <div class="language-section tamil-section" data-language="tamil">
+                <div id="tamilVerse" class="verse-text">
+                    <!-- Tamil verse will be loaded here -->
+                </div>
+            </div>
+
+            <div class="language-section sanskrit-section" data-language="sanskrit">
+                <div id="sanskritVerse" class="verse-text">
+                    <!-- Sanskrit verse will be loaded here -->
+                </div>
+            </div>
+
+            <div class="language-section english-section" data-language="english">
+                <div id="englishVerse" class="verse-text">
+                    <!-- English verse will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="mediaSection" class="media-section" style="display: none;">
+            <h3>Recitation Resources</h3>
+            <div id="audioContainer" class="media-container"></div>
+            <div id="videoContainer" class="media-container"></div>
+        </div>
+
+        <footer>
+            <p>Margazhi - December to January</p>
+        </footer>
+    </div>
+
+    <script src="js/verses.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

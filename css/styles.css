@@ -1,0 +1,613 @@
+/* Thiruppavai Website Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #8B4513;
+  --secondary-color: #D4A574;
+  --accent-color: #FFD700;
+  --text-dark: #2C1810;
+  --text-light: #6B4423;
+  --bg-light: #FFF8DC;
+  --bg-white: #FFFFFF;
+  --border-color: #D4A574;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 40px);
+  flex: 1;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border-bottom: 4px solid var(--accent-color);
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  font-weight: normal;
+  opacity: 0.95;
+}
+
+header .subtitle {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+/* Date Info */
+.date-info {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-light);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.date-info p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Language Selector */
+.language-selector {
+  text-align: center;
+  padding: 15px 20px;
+  background: white;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.language-selector label {
+  font-weight: 600;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+#languageSelect {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background: white;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+#languageSelect:hover {
+  border-color: var(--primary-color);
+}
+
+#languageSelect:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.source-credits {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-left: 15px;
+}
+
+.source-credits a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.source-credits a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Verse Selector */
+.verse-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 15px;
+  background: white;
+  border-bottom: 2px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.verse-today-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  justify-content: center;
+  min-width: 280px;
+}
+
+.verse-number-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.verse-number-display label {
+  font-weight: 600;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+#verseSelect {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background: white;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#verseSelect:hover {
+  border-color: var(--primary-color);
+}
+
+#verseSelect:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.nav-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.nav-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.nav-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Verse Content */
+.verse-content {
+  padding: 40px 20px;
+  flex: 1;
+}
+
+.language-section {
+  display: none;
+  padding: 30px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-color);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.language-section.active {
+  display: block;
+}
+
+.verse-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.tamil-section .verse-text {
+  font-size: 1.4rem;
+  font-family: 'Noto Sans Tamil', 'Lohit Tamil', sans-serif;
+}
+
+.sanskrit-section .verse-text {
+  font-size: 1.3rem;
+  font-family: 'Noto Sans Devanagari', 'Lohit Devanagari', sans-serif;
+}
+
+.verse-text p {
+  margin-bottom: 12px;
+}
+
+.verse-text .placeholder {
+  color: var(--text-light);
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Media Section */
+.media-section {
+  padding: 40px 20px;
+  background: white;
+  border-top: 2px solid var(--border-color);
+}
+
+.media-section h3 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.media-container {
+  margin-bottom: 30px;
+}
+
+.media-item {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.media-item h4 {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.media-item audio {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.media-item iframe {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-light);
+  border-top: 2px solid var(--border-color);
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+/* Tablet styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  header {
+    padding: 30px 15px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header h2 {
+    font-size: 1.5rem;
+  }
+
+  .verse-selector {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .language-selector {
+    padding: 12px;
+  }
+}
+
+/* Mobile and small tablet styles */
+@media (max-width: 768px) {
+  body {
+    padding: 5px;
+    overflow-x: hidden;
+  }
+
+  .container {
+    overflow-x: hidden;
+  }
+
+  /* Compact header for mobile */
+  header {
+    padding: 15px 10px;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    display: block;
+  }
+
+  header .subtitle {
+    display: none;
+  }
+
+  .date-info {
+    padding: 12px 10px;
+  }
+
+  .date-info p {
+    font-size: 0.9rem;
+  }
+
+  /* Compact language selector */
+  .language-selector {
+    padding: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .language-selector label {
+    font-size: 0.9rem;
+  }
+
+  #languageSelect {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    min-width: 150px;
+  }
+
+  .source-credits {
+    margin-left: 0;
+    margin-top: 5px;
+    font-size: 0.7rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Compact verse controls - single row */
+  .verse-selector {
+    padding: 10px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .verse-today-group {
+    flex: 1;
+    min-width: auto;
+    gap: 6px;
+  }
+
+  .verse-number-display {
+    flex: 0 0 auto;
+  }
+
+  .verse-number-display label {
+    display: none;
+  }
+
+  #verseSelect {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    min-width: 60px;
+  }
+
+  /* Arrow-only buttons on mobile */
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    min-width: 40px;
+  }
+
+  #prevBtn::before {
+    content: '←';
+  }
+
+  #nextBtn::before {
+    content: '→';
+  }
+
+  #prevBtn,
+  #nextBtn {
+    font-size: 0;
+    padding: 10px 14px;
+  }
+
+  #prevBtn::before,
+  #nextBtn::before {
+    font-size: 1.3rem;
+  }
+
+  .today-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .verse-content {
+    padding: 15px 10px;
+    overflow-x: hidden;
+  }
+
+  .language-section {
+    padding: 15px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .verse-text {
+    font-size: 1.05rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+
+  .tamil-section .verse-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+  }
+
+  .sanskrit-section .verse-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 3px;
+  }
+
+  header {
+    padding: 12px 8px;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  header h2 {
+    font-size: 1.3rem;
+  }
+
+  .date-info {
+    padding: 10px 8px;
+  }
+
+  .date-info p {
+    font-size: 0.85rem;
+  }
+
+  .language-selector {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .language-selector label {
+    font-size: 0.85rem;
+  }
+
+  #languageSelect {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .source-credits {
+    font-size: 0.65rem;
+  }
+
+  .verse-selector {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  #verseSelect {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    padding: 8px 12px;
+  }
+
+  .today-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .verse-content {
+    padding: 12px 8px;
+  }
+
+  .language-section {
+    padding: 12px;
+  }
+
+  .verse-text {
+    font-size: 0.95rem;
+  }
+
+  .tamil-section .verse-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+  }
+
+  .sanskrit-section .verse-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .container {
+    box-shadow: none;
+  }
+
+  .verse-selector,
+  .media-section {
+    display: none;
+  }
+
+  .language-section {
+    page-break-inside: avoid;
+  }
+}
